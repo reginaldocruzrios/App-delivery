@@ -1,0 +1,56 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.favorito {
+    box-shadow: 0px 0px 2.6rem -0.8rem darken(v.$grisClaro, 30%);
+    border-radius: 1rem;
+    background-color: v.$blanco;
+    margin-bottom: v.$normal;
+    padding: 4rem;
+    &:last-of-type {
+        margin-bottom: 0rem;
+    }
+    @include m.tablet { 
+        margin-bottom: 0rem;
+    }
+
+    &__grid {
+        @include m.desktop { 
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 4rem;
+            align-items: center;
+        }
+    }
+
+    &__imagen {
+        width: 20rem;
+        margin: 0 auto 2rem auto;
+    }
+    &__contenido {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include m.tablet { 
+            align-items: flex-start;
+        }
+    }
+    &__nombre {
+        color: v.$primario;
+        font-size: 2.4rem;
+        margin: 1rem 0;
+    }
+    &__descripcion {
+        margin: .5rem 0;
+        color: v.$secundario;
+        text-align: center;
+        font-size: 1.6rem;
+        line-height: 1.7;
+        @include m.tablet { 
+            text-align: left;
+        }
+    }
+}
+
+
+

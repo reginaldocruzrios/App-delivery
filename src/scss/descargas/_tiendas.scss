@@ -1,0 +1,35 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.tiendas {
+    margin-top: v.$separacion;
+    @include m.tablet { 
+        margin-top: 0;
+        display: flex;    
+        flex-direction: column;
+        justify-content: center;
+    }
+    &__heading {
+        margin: 0;
+        text-align: center;
+        color: v.$secundario;
+        font-size: 3rem;
+        font-weight: 700;
+        @include m.tablet { 
+            font-size: 6rem;
+        }
+    }
+    &__texto {
+        text-align: center;
+    }
+    &__grid {
+        @include m.grid(2, 2rem);
+    } 
+    &__enlace {
+        transition: transform .3s ease;
+        &:hover {
+            transform: rotate(4deg) scale(1.2);
+        }
+    }
+}
+

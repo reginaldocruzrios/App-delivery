@@ -1,0 +1,53 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.footer {
+    background-color: v.$secundario;
+    padding-top: v.$separacion;
+
+    &__grid {
+        @include m.tablet { 
+            @include m.grid(3, 2rem);    
+        }
+    }
+    &__box {
+        margin-bottom: v.$separacion;
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+        @include m.tablet { 
+            margin-bottom: 0;    
+        }
+    }
+    &__heading {
+        margin: 0;
+        color: v.$blanco;
+    }
+    &__texto {
+        color: v.$blanco;
+        line-height: 1.5;
+        margin-top: v.$normal;
+    }
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        margin-top: v.$normal;
+    }
+    &__enlace {
+        font-size: v.$normal;
+        color: v.$blanco;
+        margin-bottom: 1rem;
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+    &__copyright {
+        background-color: v.$primario;
+        color: v.$blanco;
+        text-align: center;
+        margin: 0;
+        padding: v.$normal 0;
+
+    }
+}
+
